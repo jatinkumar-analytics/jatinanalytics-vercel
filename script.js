@@ -37,6 +37,39 @@ const PROJECTS = [
     }
   },
   {
+    id: 'bharatmart-fabric-model',
+    title: 'BharatMart Enterprise Retail Model',
+    label: 'MICROSOFT FABRIC · DATA MODELLING',
+    summary: 'An enterprise dimensional model covering retail, supply-chain and workforce processes through two audience-specific Direct Lake semantic models.',
+    metric: '13 Dimensions · 9 Facts · 1 Bridge · 38 measures',
+    tags: ['Microsoft Fabric', 'Direct Lake', 'Data Modelling', 'DAX', 'GitHub'],
+    alt: 'BharatMart Microsoft Fabric dimensional-model architecture',
+    dashboard: '',
+    caseStudy: 'bharatmart-fabric-model.html',
+    source: 'https://github.com/jatinkumar-analytics/Datamart_project',
+    folder: '__external_bharatmart_project__',
+    fallbackImage: 'images/bharatmart/bharatmart-architecture.webp',
+    info: {
+      tagline: 'Nine business processes modelled at declared grains over shared conformed Dimensions.',
+      overview: 'Built a Microsoft Fabric dimensional model for a fictional Indian retailer using Lakehouse staging, a governed enterprise Warehouse and Direct Lake semantic models. The Warehouse contains 13 conformed Dimensions, nine Facts and one Product–Supplier Bridge. Retail Operations and Workforce are exposed through separate semantic models over the same physical data layer.',
+      objectives: [
+        'Define a 9 × 13 business-process bus matrix and declare the grain of every Fact before modelling.',
+        'Keep Sales, Returns, Promotions, Procurement, Shipments, Inventory, Fulfilment, Payroll and Attendance at their correct business grains.',
+        'Create controlled one-to-many, single-direction relationships with active primary Dates and inactive secondary Date roles.',
+        'Separate Retail and Workforce semantic models for audience and security boundaries without duplicating Warehouse data.',
+        'Version Warehouse and semantic-model definitions through Fabric Git integration.'
+      ],
+      insights: [
+        'The Retail model contains 20 tables, 32 focused measures and 52 relationships: 42 active and 10 inactive Date roles.',
+        'The Workforce model contains six tables, six measures and eight active Dimension-to-Fact relationships.',
+        'A Product–Supplier Bridge represents valid many-to-many sourcing associations without introducing Fact-to-Fact relationships.',
+        'Shared conformed Dimensions preserve consistent Product, Store, Employee, Geography and Date analysis across valid Facts.',
+        'The final model avoids bidirectional filtering and ambiguous paths by keeping Dimensions on the one side with single-direction filtering.'
+      ],
+      tech: ['Microsoft Fabric', 'OneLake', 'Lakehouse', 'Fabric Warehouse', 'Direct Lake', 'Dimensional Modelling', 'DAX', 'TMDL', 'GitHub']
+    }
+  },
+  {
     id: 'supply-chain',
     title: 'Supply Chain & Logistics Control Tower',
     label: 'OPERATIONS ANALYTICS',
@@ -344,7 +377,7 @@ const PROJECTS = [
 ];
 
 // Recruiter-first order: feature the end-to-end engineering project, then BI work.
-const FEATURED_PROJECT_ORDER = ['airbnb-analytics-engineering', 'fabric-sales-e2e', 'supply-chain', 'financial-fraud', 'ecommerce', 'bank', 'hr', 'zomato', 'virat Kholi', 'smoking-health'];
+const FEATURED_PROJECT_ORDER = ['airbnb-analytics-engineering', 'bharatmart-fabric-model', 'fabric-sales-e2e', 'supply-chain', 'financial-fraud', 'ecommerce', 'bank', 'hr', 'zomato', 'virat Kholi', 'smoking-health'];
 const projectRank = id => {
   const rank = FEATURED_PROJECT_ORDER.indexOf(id);
   return rank === -1 ? FEATURED_PROJECT_ORDER.length : rank;
