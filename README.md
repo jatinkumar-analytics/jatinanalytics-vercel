@@ -1,142 +1,178 @@
-# Jatin Kumar — Portfolio V2
+# Jatin Kumar — Data Analyst & Analytics Engineer Portfolio
 
-Modern, single-page analytics portfolio. Everything is generated from the data blocks at the top
-of `script.js`, so you rarely need to touch `index.html`.
+A responsive portfolio website presenting my data-analysis, business-intelligence, data-modelling, and analytics-engineering projects.
 
-**No file-name rules to remember.** Whatever files you already have in each project folder on
-GitHub are used as-is — card images, data previews, code/SQL/Power BI files, everything.
+The portfolio focuses on the business problem, modelling decisions, implementation approach, and measurable project scope rather than displaying screenshots without context.
 
-## What V2 includes
+[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-jatinanalytics.co.in-111827?style=for-the-badge&logo=vercel&logoColor=white)](https://jatinanalytics.co.in/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Jatin_Kumar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jatin-kumar-5a46a720a)
+[![GitHub](https://img.shields.io/badge/GitHub-jatinkumar--analytics-181717?style=for-the-badge&logo=github)](https://github.com/jatinkumar-analytics)
 
-- **Projects** — 8 cards with a **search box + tool filters** (Power BI / SQL / Python / DAX).
-  Each card has three actions:
-  - **View details** → full project dialog: overview, objectives, key insights, tech stack,
-    automatic source-file list, **live data preview** (first rows of the real CSVs + quick
-    statistics), all dashboard visuals, and a **Copy project link** button.
-  - **Live dashboard** → embedded Power BI report in a dialog.
-  - **Source** → the GitHub project folder.
-- **Deep links** — `https://jatinanalytics.co.in/#project=<id>` (e.g. `#project=supply-chain`)
-  opens that project's details dialog automatically; `#case=<id>` opens a dataset case study.
-  Share these with recruiters for a project straight to the point.
-- **Datasets** — 3 Kaggle dataset cards with cover images. **View case study** opens the full
-  engineering case study (problem statement, architecture, generation rules, constraints,
-  structure table, Python snippet, challenges, insights).
-- **Portfolio assistant** — intent-based answers on projects, details, dashboards, datasets,
-  case studies, skills, resume, certificate, process and contact.
-- **Resume / education / certificate card** (with Udemy verify link), contact form (Web3Forms).
+## Portfolio highlights
 
-## How images & files are picked up (important)
+- Responsive single-page portfolio
+- Searchable project gallery with technology filters
+- Dedicated project-detail dialogs
+- Standalone engineering case-study pages
+- Power BI report embeds where a published report is available
+- GitHub source and project-file links
+- Deep links for sharing an individual project directly
+- Kaggle dataset case studies
+- Resume, education, certification, and contact sections
+- Lightweight portfolio assistant for project discovery
+- Dark and light themes
 
-The site reads your GitHub repository (`projects/<Project Folder>/`) automatically:
+## Featured case studies
 
-1. **Card image** — the first image file (`.png / .jpg / .jpeg / .webp / .gif`, **any name**)
-   inside that project's folder. Add a new screenshot? It shows up automatically.
-2. **View details** — every file in the folder is listed automatically, grouped as:
-   - **Code & analysis** → `.py`, `.ipynb`, `.sql`, `.txt`
-   - **Data files** → `.csv`, `.xlsx`, `.xls`
-   - **Power BI reports** → `.pbix`
-   - **Other files** → anything else
-3. **Data preview** — the first 3 CSVs are previewed (first rows + quick statistics).
-4. **Dashboard visuals** — every image in the folder appears in the details gallery.
+### Airbnb Analytics Engineering Pipeline
 
-So the workflow is simply: **drop files into the project folder → push to GitHub → done.**
-No naming, no editing `script.js` for files or images.
+An end-to-end analytics-engineering project using AWS S3, Snowflake, and dbt Core.
 
-Notes:
+- 5,700 source records
+- 11 layered dbt models
+- Booking-grain Fact with three Dimensions
+- Two SCD Type 2 snapshots
+- 40 data-quality tests
 
-- The GitHub file list is cached in the visitor's browser for **30 minutes**. A new file you push
-  appears on the next refresh after that. (To see it instantly in your own browser: DevTools →
-  Application → Local Storage → delete the `v2_gh_tree` key, then refresh.)
-- If GitHub cannot be reached, cards fall back to the last known screenshot
-  (`fallbackImage` in `script.js`) and the details dialog still shows the static project info.
-- Images are shown **in full (not cropped)** — landscape dashboard screenshots fit best.
+[Read the case study](https://jatinanalytics.co.in/airbnb-analytics-engineering.html) · [View the repository](https://github.com/jatinkumar-analytics/airbnb-dbt-snowflake)
 
-## Run the website locally
+### BharatMart Enterprise Retail Model
+
+A Microsoft Fabric dimensional-modelling project covering retail, supply-chain, and workforce processes.
+
+- 13 conformed Dimensions
+- Nine Facts with declared grains
+- One Product–Supplier Bridge
+- Retail Direct Lake model: 20 tables and 32 measures
+- Workforce Direct Lake model: six tables and six measures
+
+[Read the case study](https://jatinanalytics.co.in/bharatmart-fabric-model.html) · [View the repository](https://github.com/jatinkumar-analytics/Datamart_project)
+
+## Project collection
+
+The portfolio currently presents 11 projects across:
+
+| Area | Examples |
+|---|---|
+| Analytics engineering | Airbnb pipeline, Fabric Sales Analytics |
+| Dimensional modelling | BharatMart enterprise retail model |
+| Operations analytics | Supply Chain and Logistics Control Tower |
+| Financial analytics | Indian Financial Fraud Analytics, Bank Analytics |
+| Sales analytics | E-Commerce Sales Analytics, Zomato Analytics |
+| Workforce analytics | HR Analytics |
+| Sports analytics | Virat Kohli Career Analytics |
+| Educational synthetic analytics | Smoking and Health Risk Analytics |
+
+Healthcare-related content uses synthetic educational data and does not represent clinical work or medical guidance.
+
+## Technology coverage
+
+```text
+Microsoft Fabric · OneLake · Lakehouse · Fabric Warehouse · Direct Lake
+Power BI · DAX · Data Modelling · TMDL
+SQL · Snowflake · dbt Core · AWS S3
+Python · Pandas · NumPy
+Git · GitHub · Vercel
+```
+
+## Repository structure
+
+```text
+jatinanalytics-vercel/
+├── index.html
+├── style.css
+├── v3.css
+├── script.js
+├── airbnb-analytics-engineering.html
+├── bharatmart-fabric-model.html
+├── images/
+│   ├── airbnb/
+│   └── bharatmart/
+├── projects/
+├── assets/
+├── resume.pdf
+├── certificate.pdf
+├── vercel.json
+└── README.md
+```
+
+## How project content is organised
+
+### Standard portfolio projects
+
+Most projects use an object inside `script.js` and a matching folder under:
+
+```text
+projects/<Project Folder>/
+```
+
+The project object stores the title, summary, metric, technology tags, source link, and detail-dialog content.
+
+### Standalone case studies
+
+Larger engineering and data-modelling projects use a dedicated HTML page and image folder:
+
+```text
+<project-case-study>.html
+images/<project-name>/
+```
+
+Current standalone case studies:
+
+```text
+airbnb-analytics-engineering.html
+bharatmart-fabric-model.html
+```
+
+## Add or update a project
+
+1. Add or edit the project object in `script.js`.
+2. Store supporting files under the correct `projects/` or `images/` folder.
+3. Use landscape WebP images where possible.
+4. Confirm that titles, metrics, links, and technology tags match the actual implementation.
+5. Test the project card, detail view, source link, and mobile layout locally.
+6. Commit the reviewed files to GitHub.
+
+## Run locally
+
+From the repository root:
 
 ```bash
 python3 -m http.server 4173 --bind 0.0.0.0
 ```
 
-Then open `http://localhost:4173`. Use a local server instead of opening `index.html` directly.
-
-## Add your profile photo
-
-Put one approved photo inside an `assets` folder using **one** exact filename (this is the only
-file in the whole site that uses a fixed name):
+Open:
 
 ```text
-assets/profile-photo.webp   ← recommended
-assets/profile-photo.png
-assets/profile-photo.jpg
-assets/profile-photo.jpeg
+http://localhost:4173
 ```
 
-## Add a new portfolio project
+A local server should be used instead of opening `index.html` directly because project content and assets are loaded through browser requests.
 
-1. Open `script.js`, find `const PROJECTS = [`.
-2. Copy a project object and paste it before the final `];`.
-3. Fill in the fields:
+## Deployment
 
-```js
-{
-  id: 'my-new-project',          // unique, lowercase, hyphenated
-  title: 'My New Analytics Project',
-  label: 'BUSINESS ANALYTICS',
-  summary: 'One or two clear sentences explaining the business problem and outcome.',
-  metric: 'Example: 50K records · sales performance analysis',
-  tags: ['Power BI', 'SQL', 'Python'],
-  alt: 'Short description of the dashboard preview image',
-  dashboard: 'https://app.powerbi.com/view?r=YOUR_PUBLISHED_REPORT_LINK',
-  source: 'https://github.com/jatinkumar-analytics/jatinanalytics-vercel/tree/main/projects/My-New-Project',
-  folder: 'My-New-Project',      // ← the exact folder name inside projects/ on GitHub
-  fallbackImage: 'https://raw.githubusercontent.com/.../any-known-screenshot.png',
-  info: {
-    tagline: 'One-line tagline shown inside the details dialog.',
-    overview: '2–4 sentence project overview.',
-    objectives: ['Objective one', 'Objective two'],
-    insights: ['Insight one', 'Insight two'],
-    tech: ['Python', 'Power BI', 'SQL']
-  }
-}
-```
+The website is deployed through Vercel with the custom domain:
 
-- `folder` is what makes **View details** work — images, files and CSV previews are all read from
-  that folder automatically.
-- `fallbackImage` is only used if GitHub is unreachable — any screenshot URL works.
+https://jatinanalytics.co.in/
 
-## Add a new Kaggle dataset (+ case study)
+Pushing reviewed changes to the connected production branch triggers a new deployment.
 
-1. In `script.js`, add an object to `const DATASETS = [` (fields: `id`, `type`, `title`,
-   `summary`, `scale`, `structure`, `url`, `cover`).
-2. For the case study, add a matching key to `const CASE_STUDIES = {` with fields
-   `problem`, `architecture`, `rules`, `constraints`, `structure`, `snippet`,
-   `challenges`, `insights`, `kaggle`, `github`.
-3. For the cover, push a `.webp` image to `images/` using the filename you set in `cover`
-   (recommended: `ecommerce-dataset-cover.webp`, `fraud-dataset-cover.webp`,
-   `hospital-dataset-cover.webp` — compressed versions are included in this package).
-   The `.png` versions are used automatically as fallback, so the old files can stay.
+## Design principles
 
-## Display order
+- Keep project claims factual and verifiable.
+- Explain the business problem before listing tools.
+- Show grain, modelling, validation, and delivery decisions.
+- Use readable screenshots instead of crowded galleries.
+- Avoid claiming production deployment where only development-scale work was completed.
+- Clearly label synthetic and educational datasets.
 
-Move objects up/down inside `PROJECTS` / `DATASETS` in `script.js` — the page renders them in
-list order.
+## Contact
 
-## Files you normally edit
+**Jatin Kumar**  
+Data Analyst · Analytics Engineer · BI Projects  
+Delhi · Gurugram · Delhi NCR
 
-| File | Use |
-|------|-----|
-| `script.js` | Projects, datasets, case studies, assistant answers. |
-| `index.html` | Page text, headings, contact details, links. |
-| `style.css` | Colors, layout, fonts, spacing. |
-| GitHub `projects/<folder>/` | All your data, code, SQL, PBIX, screenshots — any names. |
-| `assets/profile-photo.*` | Your profile photo. |
-| `certificate.pdf` | Replace with the same filename to update the certificate. |
-| `resume.pdf` | Replace with the same filename to update the resume. |
-
-`projects.json` and `case_studies.json` are legacy source records; the V2 page no longer needs
-them (the data now lives in `script.js`).
-
-## Deploy (Vercel)
-
-This repo is connected to Vercel. To publish, replace the three site files at the repo root
-(`index.html`, `style.css`, `script.js`), push to `main` — Vercel redeploys automatically.
+- Portfolio: https://jatinanalytics.co.in/
+- LinkedIn: https://www.linkedin.com/in/jatin-kumar-5a46a720a
+- GitHub: https://github.com/jatinkumar-analytics
+- Email: jating1416@gmail.com
